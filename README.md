@@ -1,42 +1,44 @@
-# Wecode Git Test
+# Git command 정리
+>- `git init`
+- `git remote add origin <remote repository url>`
+- `git add <file name>`
+- `git commit`
+- `git push origin <branch name>`
+- `git pull origin <branch name>`
+- `git merge <branch name>`
 
-해당 레포지토리는 `git test`를 위한 레포지토리입니다.
+---
+## git init
 
-시험 시간은 총 1시간이며, `git`에 익숙해질 때까지 연습을 하셔도 좋습니다.
+- git을 시작할때 사용하는 명령어로 저장소를 생성한다.
 
-교육생분들은 아래 안내에 따라 단계별 과제를 진행해주시기 바랍니다.
+## git remote add origin `<remote repository url>`
 
-<br>
-<br>
+- git과 github를 연결시켜주는 명령어이다.
+- 명령어를 나눠서 설명을 한다면 아래와 같다.
+	- `git remote add` : git에 연결 추가를 할게 -> 뭐를?
+	- `origin <remote repository url>` : 레파지토리의 주소를 origin이라는 별명으로 설정해서 가져올게!
+    >여기서 별명인 origin은 임의로 수정가능하지만 origin이라고 하는것이 컨벤션
+    
+## git add `<file name>`
 
-## 📍 초기 세팅
+- 변경된 파일을 추가준비를 하라는 명령어로 두가지의 작성방법이 있다.
+	- `git add <file name>` : 해당 파일만 추가
+	-`git add .` : 변경된 파일 모두 추가(주로 사용됨)
 
-1. 터미널을 켜서 desktop 디렉토리로 이동합니다.
-   ```shell
-        $ cd desktop
-    ```
+## git commit
 
-2. `wecode-git-test` 레포지토리를 클론해주세요.
-   
-    ```shell
-        $ git clone https://github.com/wecode-bootcamp-korea/wecode-git-test.git
-    ```
-3. 터미널에서 클론 받은 레포지토리의 디렉토리 경로로 이동 후 remote 연결을 해제해주세요.
-   
-    ```shell
-        $ git remote remove origin
-    ```
-4. 본인 github 페이지로 이동하여 repository를 생성해주세요. repository 이름은 `git-test`로 만들어주세요.
+- add로 준비된 파일들을 실제로 적용하는 것이며 두가지의 작성방법이 있다.
+(commit 메세지는 작업내용에 대해 간단한 영문단어로 작성 후 어떤 작업을 했는지 설명 작성)
+	- `git commit -m "ADD : 이름 수정" `: commit 메세지 한줄만 작성 시
+	-`git commit` : commit 메세지 여러줄 작성 시
+    
+## git push origin `<branch name>`
 
+- commit한 파일을 명령어에 가르킨 branch에 github에 올리는 명령어
 
-5. 이후 아래 이미지처럼 개인 Github에 생성한 레포지토리의 주소를 복사합니다.
-   - 예시 이미지
-   ![스크린샷 2023-03-21 오전 11 13 55](https://user-images.githubusercontent.com/78401083/226503628-aaf7a9fc-139c-470f-ba4a-3250a9b144e3.png)
+## git pull origin `<branch name>`
+- 명령어에 가르킨 branch의 파일들을 로컬 git으로 받아오는 명령어
 
-6. 다시 clone 받은 프로젝트로 돌아와서 방금 생성한 개인 repo와 연결해줍니다.
-   
-    ```shell
-        $ git remote add origin https://github.com/[본인의 github username]/git-test.git
-    ```
-7. 이후 아래 노션 안내에 따라 Test를 진행해주세요.
-   - [과제 안내 노션 페이지](https://www.notion.so/wecode/All-Git-Test-a13014965ce748f2949c96fff97d7979)
+## git merge `<branch name>`
+- 다른 branch를 현재 checkout된 branch의에 합치는 명령어
